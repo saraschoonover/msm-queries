@@ -1,0 +1,17 @@
+<h1>List Of All Directors</h1>
+<hr>
+
+
+
+<div class="card-container d-flex justify-content-center align-items-center flex-wrap">
+    <% @directors.each do|director| %>
+      <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
+         <h5 class="card-title"> <%= director.name %></h5>
+         <p><%= director.dob %></p>
+         <p><%= director.id %></p>
+          <img src=<%= director.image %> class="card-img-top" alt="...">
+          <p>Show details</p>
+         </div>
+               <% end %>
+
+  </div>
