@@ -1,1 +1,15 @@
-<h1>ELDEST</h1>
+<div class="container d-flex justify-content-center align-items-center flex-column mt-4">
+<h1>Eldest Director</h1>
+
+<div class="card-container d-flex justify-content-center align-items-center flex-wrap mt-4">
+    
+      <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
+         <h5 class="card-title m-3"> <%= @old.name %></h5>
+         
+          <img src=<%= @old.image %> class="card-img-top" alt="...">
+          <p>The youngest director in our database right now is <%= @old.name %>, born on <%= @old.dob.strftime('%B %d, %Y') %></p>
+         </div>
+               
+
+  </div>
+</div>

@@ -1,13 +1,16 @@
 <div class="container d-flex justify-content-center align-items-center flex-column mt-4">
-<h1>Youngest Director</h1>
+<h1>Actor #<%= @actor.id %> details</h1>
 
 <div class="card-container d-flex justify-content-center align-items-center flex-wrap mt-4">
     
       <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
-         <h5 class="card-title m-3"> <%= @young.name %></h5>
+         <h5 class="card-title m-3"> <%= @actor.name %></h5>
          
-          <img src=<%= @young.image %> class="card-img-top" alt="...">
-          <p>The youngest director in our database right now is <%= @young.name %>, born on <%= @young.dob.strftime('%B %d, %Y') %></p>
+          <img src=<%= @actor.image %> class="card-img-top" alt="...">
+          <p><%= @actor.dob %></p>
+          <p><%= @actor.bio %></p>
+          <p>Created at <%= @actor.created_at %></p>
+          <p>Updated at <%= @actor.updated_at %></p>
          </div>
                
 

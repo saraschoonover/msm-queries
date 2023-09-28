@@ -1,0 +1,19 @@
+<div class="container d-flex justify-content-center align-items-center flex-column mt-4">
+<h1>Movie #<%= @movie.id %> details</h1>
+
+<div class="card-container d-flex justify-content-center align-items-center flex-wrap mt-4">
+    
+      <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
+         <h5 class="card-title m-3"> <%= @movie.title %></h5>
+         <p>Year: <%= @movie.year %></p>
+         <p>Duration: <%= @movie.duration %></p>
+         
+          <img src=<%= @movie.image %> class="card-img-top" alt="...">
+          <p>Description: <%= @movie.description %></p>
+          <p><%= @director.name %></p>
+          <p>Created at <%= @movie.created_at %></p>
+          <p>Updated at <%= @movie.updated_at %></p>
+         </div>
+               
+
+  </div>
