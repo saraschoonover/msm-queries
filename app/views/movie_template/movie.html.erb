@@ -7,7 +7,7 @@
          <h5 class="card-title"> <%= movie.title %></h5>
          
          <p><%= movie.year %></p>
-         
+         <p><%= Director.where({:id => movie.director_id}).at(0).name %></p>
          <p><%= movie.id %></p>
           <img src=<%= movie.image %> class="card-img-top" alt="...">
           <a href="/movies/<%= movie.id %>">Show Details</a>

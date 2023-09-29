@@ -1,18 +1,30 @@
 <div class="container d-flex justify-content-center align-items-center flex-column mt-4">
-<h1>Actor #<%= @actor.id %> details</h1>
+<h1>Actor #<%= @personal_info.id %> details</h1>
+  <h1>Actor #<%= @personal_info.id %> details</h1>
 
 <div class="card-container d-flex justify-content-center align-items-center flex-wrap mt-4">
     
       <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
-         <h5 class="card-title m-3"> <%= @actor.name %></h5>
-         
-          <img src=<%= @actor.image %> class="card-img-top" alt="...">
-          <p><%= @actor.dob %></p>
-          <p><%= @actor.bio %></p>
-          <p>Created at <%= @actor.created_at %></p>
-          <p>Updated at <%= @actor.updated_at %></p>
-         </div>
-               
+         <h5 class="card-title m-3"> <%= @personal_info.name %></h5>
+            <img src=<%= @personal_info.image %> class="card-img-top" alt="...">
+            <p><%= @personal_info.dob %></p>
+            <p><%= @personal_info.bio %></p>
+            <p><%= @personal_info.id %></p>
+            <p>Created at <%= @personal_info.created_at %></p>
+            <p>Updated at <%= @personal_info.updated_at %></p>
+      </div>
+</div>
 
+               
   </div>
+  
+
+  <h1>FILMOGRAPHY</h1>
+  <% @characters.each do |character| %>
+  <p><%= character.name %></p>
+  <p><%= Movie.where({:id => character.movie_id}).at(0).title %></p>
+  <p><%= Movie.where({:id => character.movie_id}).at(0).year %></p>
+  <p>><%= Director.where({:id => Movie.where({:id => character.movie_id}).at(0).director_id}).at(0).name %></p>
+  <a href="/movies/<%= character.movie_id %>">Show details</a>
+  <% end %>
 </div>

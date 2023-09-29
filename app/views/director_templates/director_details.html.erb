@@ -5,26 +5,25 @@
     
       <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
          <h5 class="card-title m-3"> <%= @director.name %></h5>
-          <img src=<%= @director.image %> class="card-img-top" alt="...">
-          <p><%= @director.dob %></p>
-          <p><%= @director.bio %></p>
-          <p><%= @director.id %></p>
-          <p>Created at <%= @director.created_at %></p>
-          <p>Updated at <%= @director.updated_at %></p>
-         </div>
-  </div>
+            <img src=<%= @director.image %> class="card-img-top" alt="...">
+            <p><%= @director.dob %></p>
+            <p><%= @director.bio %></p>
+            <p><%= @director.id %></p>
+            <p>Created at <%= @director.created_at %></p>
+            <p>Updated at <%= @director.updated_at %></p>
+      </div>
+</div>
   <h1>FILMOGRAPHY</h1>
-<div class="card-container d-flex justify-content-center align-items-center flex-wrap">
+  <div class="card-container d-flex justify-content-center align-items-center flex-wrap">
     <% @filmography.each do|film| %>
       <div class="card d-flex justify-content-center align-items-center flex-wrap m-4" style="width: 18rem;">
          <h5 class="card-title"> <%= film.title %></h5>
-         <p><%= film.year %></p>
-         <p><%= @director.name %></p>
-         <p><%= film.id %></p>
+          <p><%= film.year %></p>
+          <p><%= @director.name %></p>
+          <p><%= film.id %></p>
           <img src=<%= film.image %> class="card-img-top" alt="...">
           <a href="/movies/<%= film.id %>">Show Details</a>
-         </div>
-          
+       </div>
                <% end %>
 
   </div>
